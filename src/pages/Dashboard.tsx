@@ -38,9 +38,9 @@ export default function Dashboard() {
 
   // Filtrar opciones según el rol
   const filteredMenuItems = menuItems.filter((item) => 
-    item.roles.includes(userRole)
+    (userRole === 'admin' || userRole === 'usuario') && item.roles.includes(userRole)
   );
-
+  
   return (
     <div className="min-h-screen bg-gray-50">
       <nav className="bg-white shadow-sm">
